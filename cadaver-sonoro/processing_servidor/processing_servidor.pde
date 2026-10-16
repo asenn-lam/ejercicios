@@ -38,11 +38,10 @@ void oscEvent(OscMessage msg) {
 
   String id = msg.get(0).stringValue();
   SoundFile sonido = sonidos.get(id);
-  float duracion = sonido.duration();
-  println(sonido);
   sonido.stop();
   sonido.play();
-  //sonido.jump(duracion * random(1.0));
+  sonido.jump(sonido.duration() * random(0,0.9));
+  //sonido.pan(random(-1,1));
   //if(sonido != null){
   //}
 }
